@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: "Poppins", monospace;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+body {
+    background-color: #DDD0C8;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-size: 2.8em;
+    font-weight: 900;
+    margin: 40px 0;
+}
+
+#innercontainer {
+    width: 900px;
+    margin: 0px auto 20px;
+    background: red;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.bookCard {
+    background: lightblue;
+    width: 50%;
+    gap: 5px;
+    padding: 15px;
+}
+
+button {
+    background-color: lightgreen;
+    cursor: pointer;
+}
