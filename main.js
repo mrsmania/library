@@ -38,7 +38,7 @@ function Book(title, author, pages, read) {
 
 Book.prototype.changeReadStatus = function (element) {
     this.read = !this.read;
-    element.innerHTML = this.read ? BOOK_ICON_READING : BOOK_ICON_FINISHED;
+    element.innerHTML = this.read ? (BOOK_ICON_READING + "<div class=\"read\"></div>") : BOOK_ICON_FINISHED;
 }
 
 const theHobbit = new Book("The Hobbit", "J.R.R. Tolkien", "295", false);
