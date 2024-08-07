@@ -9,7 +9,7 @@
 }
 
 body {
-    background-color: #DDD0C8;
+    background-color: #DDD0C8;;
 }
 
 #container {
@@ -25,24 +25,38 @@ h1 {
     margin: 40px 0;
 }
 
+h2 {
+    font-size: 1.2em;
+    font-weight: 900;
+}
+
 #innercontainer {
-    width: 900px;
     margin: 0px auto 20px;
-    background: red;
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    justify-content: center;
+    width: 100%;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 250px));
+    grid-auto-rows: minmax(300px, auto);
+    gap: 1rem;
 }
 
 .bookCard {
-    background: lightblue;
-    width: 50%;
-    gap: 5px;
+    background: white;
     padding: 15px;
-    border: 1px solid darkgray;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.125);
 }
 
-button {
-    margin: 10px;
-    background-color: lightgreen;
+.bookCardInfos {
+    height: 100%;
+}
+
+.bookCardButtons button {
+    margin-right: 10px;
+    background-color: #FFCC00;
     cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
 }

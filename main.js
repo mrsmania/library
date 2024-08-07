@@ -40,25 +40,34 @@ Book.prototype.changeReadStatus = function (element) {
 }
 
 const theHobbit = new Book("The Hobbit", "J.R.R. Tolkien", "295", false);
-const lordOfTheRings1 = new Book("Lord of the Rings - The Fellowship of the Ring", "J.R.R. Tolkien", "864", true);
-const lordOfTheRings2 = new Book("Lord of the Rings - The Two Towers", "J.R.R. Tolkien", "1094", true);
-const lordOfTheRings3 = new Book("Lord of the Rings - The Return of the King", "J.R.R. Tolkien", "964", true);
+const lordOfTheRings1 = new Book("The Lord of the Rings - The Fellowship of the Ring", "J.R.R. Tolkien", "864", true);
+const lordOfTheRings2 = new Book("The Lord of the Rings - The Two Towers", "J.R.R. Tolkien", "1094", true);
+const lordOfTheRings3 = new Book("The Lord of the Rings - The Return of the King", "J.R.R. Tolkien", "964", true);
 const myLibrary = [theHobbit, lordOfTheRings1, lordOfTheRings2, lordOfTheRings3];
 
 function displayBook(book, index) {
-    const div = document.createElement('div');
-    div.innerHTML = "<p>\"" + book.title + "\"</p>";
-    div.innerHTML += "<p>Author: " + book.author + "</p>";
-    div.innerHTML += "<p>Pages: " + book.pages + "</p>";
-    div.innerHTML += "<p class=\"status\">Read: " + book.read + "</p>";
-    div.className = "bookCard";
-    innercontainer.append(div);
+    const bookCard = document.createElement('div');
+    bookCard.className = "bookCard";
+    innercontainer.append(bookCard);
 
-    const statusElement = div.querySelector(".status");
+    const bookCardInfos = document.createElement('div');
+    bookCardInfos.className = "bookCardInfos";
+    bookCard.append(bookCardInfos);
+
+    const bookCardButtons = document.createElement('div');
+    bookCardButtons.className = "bookCardButtons";
+    bookCard.append(bookCardButtons);
+
+    bookCardInfos.innerHTML = "<p><h2>" + book.title + "</h2></p>";
+    bookCardInfos.innerHTML += "<p>" + book.author + "</p>";
+    bookCardInfos.innerHTML += "<p>" + book.pages + " pages</p>";
+    bookCardInfos.innerHTML += "<p class=\"status\">Read: " + book.read + "</p>";
+    
+    const statusElement = bookCard.querySelector(".status");
     const toggleReadBtn = document.createElement('button');
-    toggleReadBtn.textContent = "Toggle read";
+    toggleReadBtn.textContent ="Toggle read";
     toggleReadBtn.addEventListener('click', () => book.changeReadStatus(statusElement));
-    div.append(toggleReadBtn);
+    bookCardButtons.append(toggleReadBtn);
 
     const deleteBtn = document.createElement('button');
     deleteBtn.textContent = "Delete";
@@ -66,7 +75,7 @@ function displayBook(book, index) {
         myLibrary.splice(index, 1);
         displayBooks(myLibrary);
     });
-    div.append(deleteBtn);
+    bookCardButtons.append(deleteBtn);
 }
 
 function displayBooks(array) {
