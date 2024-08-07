@@ -30,6 +30,10 @@ h2 {
     font-weight: 900;
 }
 
+svg {
+    display: block;
+}
+
 #innercontainer {
     margin: 0px auto 20px;
     display: grid;
@@ -49,14 +53,36 @@ h2 {
     box-shadow: 5px 5px 5px rgba(0,0,0,0.125);
 }
 
+.bookCardButtons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1em;
+}
+
 .bookCardInfos {
     height: 100%;
 }
 
-.bookCardButtons button {
-    margin-right: 10px;
-    background-color: #FFCC00;
+.icon {
+    width: 28px;
+    height: 28px;
     cursor: pointer;
-    padding: 10px;
-    border-radius: 5px;
+    fill: #FFCC00;
+}
+
+.bookCard {
+    position: relative;
+}
+
+.read::after {
+    content: "read";
+    position: absolute;
+    text-align: center;
+    top: 24px;
+    left: -30px;
+    background-color: rgba(0, 128, 0, 0.75);
+    color: white;
+    padding: 0 2rem;
+    transform: rotate(-45deg);
+    overflow: hidden;
 }
