@@ -38,9 +38,11 @@ h1 {
     width: 50%;
     gap: 5px;
     padding: 15px;
+    border: 1px solid darkgray;
 }
 
 button {
+    margin: 10px;
     background-color: lightgreen;
     cursor: pointer;
 }
