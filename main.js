@@ -45,14 +45,14 @@ Book.prototype.changeReadStatus = function (readIconElement, bookCard, readIconD
     readIconDiv.classList.toggle('itemIsRead', this.read);
 }
 
-const theHobbit = new Book("The Hobbit", "J.R.R. Tolkien", "310", false,"https://upload.wikimedia.org/wikipedia/en/thumb/a/a9/The_Hobbit_trilogy_dvd_cover.jpg/220px-The_Hobbit_trilogy_dvd_cover.jpg");
+const theHobbit = new Book("The Hobbit", "J.R.R. Tolkien", "310", false, "https://upload.wikimedia.org/wikipedia/en/thumb/a/a9/The_Hobbit_trilogy_dvd_cover.jpg/220px-The_Hobbit_trilogy_dvd_cover.jpg");
 const lordOfTheRings1 = new Book("The Lord of the Rings - The Fellowship of the Ring", "J.R.R. Tolkien", "423", true, "https://s26162.pcdn.co/wp-content/uploads/2023/07/The-Fellowship-of-the-Ring.jpg");
 const lordOfTheRings2 = new Book("The Lord of the Rings - The Two Towers", "J.R.R. Tolkien", "352", true, "https://cdn.vox-cdn.com/thumbor/_IHlNwoEBUZlb5yIj8mfPxiD6Ds=/0x0:3816x1575/1200x675/filters:focal(767x23:1377x633)/cdn.vox-cdn.com/uploads/chorus_image/image/69927797/ROTK_eye_of_sauron.0.jpg");
-const lordOfTheRings3 = new Book("The Lord of the Rings - The Return of the King", "J.R.R. Tolkien", "416", true,"https://cdn.vox-cdn.com/thumbor/oztKvhMaL7iwB9tLeYnFaOwDNvM=/260x0:1852x796/fit-in/1200x600/cdn.vox-cdn.com/uploads/chorus_asset/file/14231686/lotr3_movie_screencaps.com_19747.jpg");
-const theSilmarillion = new Book("The Silmarillion", "J.R.R. Tolkien", "365", false,"");
-const davinciCode = new Book("The Da Vinci Code", "Dan Brown", "689", true,"https://www.labouquinerieduliseron.nc/dev007/wp-content/uploads/2021/08/51e2oM03P-L.jpg");
-const nameOfTheRose = new Book("The Name of the Rose", "Umberto Eco", "512", false,"https://www.otherwordsbooks.co.uk/wp-content/uploads/2023/02/Name-of-the-Rose-1.jpg");
-const diaryOfAnneFrak = new Book("The Diary of Anne Frank", "Anne Frank", "714", false,"https://www.nationalww2museum.org/sites/default/files/styles/wide_medium/public/2023-12/23-0736-sdc-anne-frank-website-cal-entry-960x700-r5.jpg?h=c6cbd989");
+const lordOfTheRings3 = new Book("The Lord of the Rings - The Return of the King", "J.R.R. Tolkien", "416", true, "https://cdn.vox-cdn.com/thumbor/oztKvhMaL7iwB9tLeYnFaOwDNvM=/260x0:1852x796/fit-in/1200x600/cdn.vox-cdn.com/uploads/chorus_asset/file/14231686/lotr3_movie_screencaps.com_19747.jpg");
+const theSilmarillion = new Book("The Silmarillion", "J.R.R. Tolkien", "365", false, "");
+const davinciCode = new Book("The Da Vinci Code", "Dan Brown", "689", true, "https://www.labouquinerieduliseron.nc/dev007/wp-content/uploads/2021/08/51e2oM03P-L.jpg");
+const nameOfTheRose = new Book("The Name of the Rose", "Umberto Eco", "512", false, "https://www.otherwordsbooks.co.uk/wp-content/uploads/2023/02/Name-of-the-Rose-1.jpg");
+const diaryOfAnneFrak = new Book("The Diary of Anne Frank", "Anne Frank", "714", false, "https://www.nationalww2museum.org/sites/default/files/styles/wide_medium/public/2023-12/23-0736-sdc-anne-frank-website-cal-entry-960x700-r5.jpg?h=c6cbd989");
 const myLibrary = [theHobbit, lordOfTheRings1, lordOfTheRings2, lordOfTheRings3, theSilmarillion, davinciCode, nameOfTheRose, diaryOfAnneFrak];
 
 function displayBook(book, index) {
@@ -63,8 +63,8 @@ function displayBook(book, index) {
     const bookCardBackground = document.createElement('div');
     bookCardBackground.className = "bookCardBackground";
     bookCard.append(bookCardBackground);
-    
-    bookCardBackground.innerHTML += book.url ? "<img src=\""+book.url+"\">" : "<img src=\"https://variety.com/wp-content/uploads/2013/10/film-placeholder.jpg\">";
+
+    bookCardBackground.innerHTML += book.url ? "<img src=\"" + book.url + "\">" : "<img src=\"https://variety.com/wp-content/uploads/2013/10/film-placeholder.jpg\">";
 
     const bookCardInfos = document.createElement('div');
     bookCardInfos.className = "bookCardInfos";
@@ -76,10 +76,10 @@ function displayBook(book, index) {
     const bookCardButtons = document.createElement('div');
     bookCardButtons.className = "bookCardButtons";
     bookCard.append(bookCardButtons);
-    
+
     const pagesDiv = document.createElement('div');
     pagesDiv.classList.add('pages');
-    pagesDiv.innerHTML = book.pages+" pages";
+    pagesDiv.innerHTML = book.pages + " pages";
     bookCardButtons.append(pagesDiv);
 
     const readIconDiv = document.createElement('div');
@@ -105,7 +105,10 @@ function displayBook(book, index) {
 }
 
 function displayBooks(array) {
-    innercontainer.innerHTML = '';
+    let innercontainer = document.getElementById('innercontainer');
+    while (innercontainer.children.length > 1) {
+        innercontainer.removeChild(innercontainer.lastChild);
+    }
     array.forEach((element, index) => displayBook(element, index));
 }
 
