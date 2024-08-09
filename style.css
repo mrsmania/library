@@ -187,7 +187,7 @@ dialog {
 }
 
 dialog::backdrop {
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
 dialog p {
@@ -200,28 +200,87 @@ dialog p {
 
 .formElement label {
     display: block;
-    margin-bottom: 2px;
     font-size: 0.85rem;
+    font-weight: 600;
 }
 
-.formElement input[type="text"] {
+.formElement.readElement {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    height: 40px;
+}
+
+.formElement label#readLabel {
+    display: inline;
+}
+
+#read {
+    margin: 0;
+    width: 24px;
+    height: 24px;
+}
+
+.formElement input[type="text"],
+.formElement input[type="number"] {
     width: 100%;
 }
 
-input[type="text"] {
+input[type="text"],
+input[type="number"] {
     border: 1px solid #E5E7EB;
     border-radius: 3px;
     padding: 5px 8px;
     font-size: 1rem;
 }
 
-input[type="text"]:focus {
+input[type="text"]:focus,
+input[type="number"]:focus {
     outline: none;
     box-shadow: 2px 2px 2px silver;
 }
 
 .asterisk {
-    color: red;
+    color: #F95959;
+}
+
+.buttons {
+    display: flex;
+    width: 100%;
+    gap: 10px;
+}
+
+button {
+    font-weight: 600;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button[type="submit"] {
+    background-color: hsl(0, 93%, 66%);
+    color: white;
+}
+
+button[type="submit"]:hover {
+    background-color: hsl(0, 93%, 62%);
+}
+
+button[type="submit"]:active {
+    background-color: hsl(0, 93%, 58%);
+}
+
+button[type="button"] {
+    background-color: hsl(0, 0%, 85%);
+}
+
+button[type="button"]:hover {
+    background-color: hsl(0, 0%, 80%);
+}
+
+button[type="button"]:active {
+    background-color: hsl(0, 0%, 75%);
 }
 
 #footer {

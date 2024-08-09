@@ -29,7 +29,7 @@
                 </div>
             </div>
         </div>
-        <dialog open>
+        <dialog>
             <h3>Add a new book</h3>
             <p>Required fields are followed by <span aria-label="required" class="asterisk" class="asterisk">*</span>.
             </p>
@@ -53,23 +53,22 @@
                         <span>Pages</span>
                         <span aria-label="required" class="asterisk">*</span>
                     </label>
-                    <input type="text" id="pages" required>
+                    <input type="number" id="pages" required>
                 </div>
                 <div class="formElement">
                     <label for="url">
-                        <span>URL</span>
+                        <span>Thumbnail URL</span>
                     </label>
-                    <input type="text" id="url"></select>
+                    <input type="text" id="url">
                 </div>
-                <div class="formElement">
-                    <label for="read">
-                        <span>Read?</span>
-                        <span aria-label="required" class="asterisk">*</span>
-                    </label>
-                    <input type="checkbox" id="read"></select>
+                <div class="formElement readElement">
+                    <input type="checkbox" id="read">
+                    <label for="read" id="readLabel">I have read this book</label>
                 </div>
-                <button type="button" id="closeModalBtn">Close</button>
-                <button type="submit">Submit</button>
+                <div class="buttons">
+                    <button type="button" id="closeModalBtn">Close</button>
+                    <button type="submit">Add book</button>
+                </div>
             </form>
         </dialog>
         <div id="modal"></div>

@@ -53,7 +53,8 @@ const theSilmarillion = new Book("The Silmarillion", "J.R.R. Tolkien", "365", fa
 const davinciCode = new Book("The Da Vinci Code", "Dan Brown", "689", true, "https://www.labouquinerieduliseron.nc/dev007/wp-content/uploads/2021/08/51e2oM03P-L.jpg");
 const nameOfTheRose = new Book("The Name of the Rose", "Umberto Eco", "512", false, "https://www.otherwordsbooks.co.uk/wp-content/uploads/2023/02/Name-of-the-Rose-1.jpg");
 const diaryOfAnneFrak = new Book("The Diary of Anne Frank", "Anne Frank", "714", false, "https://www.nationalww2museum.org/sites/default/files/styles/wide_medium/public/2023-12/23-0736-sdc-anne-frank-website-cal-entry-960x700-r5.jpg?h=c6cbd989");
-const myLibrary = [theHobbit, lordOfTheRings1, lordOfTheRings2, lordOfTheRings3, theSilmarillion, davinciCode, nameOfTheRose, diaryOfAnneFrak];
+const harryPotter1 = new Book("Harry Potter and the Philosopher's Stone", "J. K. Rowling", "223", true, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShTKYXpzFQQDc7GkCWzsD937sXLo1bmKlHiw&s");
+const myLibrary = [theHobbit, lordOfTheRings1, lordOfTheRings2, lordOfTheRings3, theSilmarillion, davinciCode, nameOfTheRose, diaryOfAnneFrak, harryPotter1];
 
 function displayBook(book, index) {
     const bookCard = document.createElement('div');
